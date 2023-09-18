@@ -2,12 +2,17 @@
 //
 void setup() {
   //Print & Println
-  print("Hello");
-  print("World");
-  //Character escapes, Tab, new
+  println("Hello World");
+  println("Width:"+width, "\t", "Height:"+height);
+  println("Display Width: "+displayWidth, "\tDisplay Width: "+displayHeight);
+  //Character Escapes, Tab, new
+  //
+  //fullScreen();
+  size(600, 400);
 } //End setup
 //
-void draw() {} //End draw
+void draw() {
+} //End draw
 //
 void keyPressed() {} //End keypress
 //
