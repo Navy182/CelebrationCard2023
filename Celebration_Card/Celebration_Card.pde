@@ -2,13 +2,17 @@
 int appWidth, appHeight;
 float xRectBackground, yRectBackground, widthRectBackground, heightRectBackground;
 float xRectQuit, yRectQuit, widthRectQuit, heightRectQuit;
+int sizeFont, size; //Text Variables
+//String ; //ALL text variables as name=value pairs
+//PFont ; //ALL fonts used
+//color ; //colour palette & inks
 //
 void setup() {
   //Print & Println
   println("Hello World");
   println("Width:"+width, "\t", "Height:"+height);
   println("Display Width: "+displayWidth, "\tDisplay Width: "+displayHeight);
-  //Character Escapes, Tab, new
+  //Character Escapes, tab, new
   //
   //FullScreen();
   size(600, 400);
@@ -25,11 +29,35 @@ void setup() {
   widthRectQuit = appWidth*1/2;
   heightRectQuit = appHeight*1/2;
   //
+  //DIVS
+  rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
+  rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
+  //rect(); //Image, foreground, near the top
+  //rect(); //Copy & Paste this for all rect()s
+  //rect(); //
+  //rect(); //
+  //rect(); //
+  //rect(); //
+  //rect(); //
+  //
+  // Text Setup
+  // Fonts from OS (Operating System)
+  //String[] fontList = PFont.list(); //Lists all fonts available on OS
+  //printArray(fontList);
+  //[fontName] = createFont("[fontSpelling]", [startingFontSize]); 
+  // Tools / Create Font / Find Font / Do not press "OK", Known bug
+  //
 } //End setup
 //
 void draw() {
-  rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
-  rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
+ //Drawing Text, copied for each line of text
+ //fill( [ColourName] ); //ink
+  textAlign( CENTER, CENTER ); //Align X&Y, see Processing.org / Reference
+  //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
+  //size = [pixelNumberFontSize]; //integer number
+  //textFont( [fontVariable], size ); //states which font to use
+  //text( [textStringName], [four rect() variables copied from DIVs] );
+  //
 } //End draw
 //
 void keyPressed() {
