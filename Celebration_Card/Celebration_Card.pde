@@ -1,14 +1,16 @@
  //Program Notes
 //Gobal Variables
 int appWidth, appHeight;
+String title="wwwwwww";
+color teal=#9AEAD7, resetDefaultInk=#FFFFFF;
 float xRectBackground, yRectBackground, widthRectBackground, heightRectBackground;
 float xRectQuit, yRectQuit, widthRectQuit, heightRectQuit;
 int sizeFont, size;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
-PImage picBackground
+PImage picBackground;
 Boolean nightmode=false; //Note: clock and turn on automatically
 Boolean brightnessControl=false; //Note: ARROWS
-int brightnessNumber=255; //Range:1-255
+int brightnessNumber=184; //Range:1-255
 //Text Variables
 //String ; //ALL text variables as name=value pairs
 //PFont ; //ALL fonts used
@@ -16,7 +18,7 @@ int brightnessNumber=255; //Range:1-255
 //
 void setup() {
   //Print & Println
-  println("Hello World");
+  println("wwwwwww");
   println("Width:"+width, "\t", "Height:"+height);
   println("Display Width: "+displayWidth, "\tDisplay Width: "+displayHeight);
   //Character Escapes, tab, new
@@ -41,34 +43,34 @@ void setup() {
   backgroundImageHeight = appHeight*0;
   //
   //DIVS
-  rect(backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight);
+  //rect(backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight);
   rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
   rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
+  rect(xTitle, yTitle, widthTitle, heightTitle); //'wwwwwww'
   //rect(); //Image, foreground, near the top
   //rect(); //Copy & Paste this for all rect()s
   //rect(); //
   //
   // Text Setup
   // Fonts from OS (Operating System)
-  //String[] fontList = PFont.list(); //Lists all fonts available on OS
-  //printArray(fontList);
-  //[fontName] = createFont("[fontSpelling]", [startingFontSize]); 
+  String[] fontList = PFont.list(); //Lists all fonts available on OS
+  printArray(fontList);
+  titleFont = createFont("HighTowerText-Italic", 45); 
   // Tools / Create Font / Find Font / Do not press "OK", Known bug
   //
 } //End setup
 //
 void draw() {
  //Drawing Text, copied for each line of text
- //fill( [ColourName] ); //ink
-  textAlign( CENTER, CENTER ); //Align X&Y, see Processing.org / Reference
+ fill(teal); //ink
+ textAlign( CENTER, CENTER ); //Align X&Y, see Processing.org / Reference
   //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
-  //size = [pixelNumberFontSize]; //integer number
-  //textFont( [fontVariable], size ); //states which font to use
-  //text( [textStringName], [four rect() variables copied from DIVs] );
-  //background(255); //built in BUG, 1 pixel
-  rect(backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight);
+  size = 35; //integer number
+  textFont( Titlefont , size ); //states which font to use
+  text( xTitle, yTitle, widthTitle, heightTitle );
+  background(184); //built in BUG, 1 pixel
   //
-  if ( brightnessControl==true ) tint (255, brightnessNumber);
+  if ( brightnessControl==true ) tint (184, brightnessNumber);
   { //Gray Scale: 1/2 tint (i.e 128/256=1/2)
   if ( brightnessNumber<1 ) {
     brightnessNumber=1;
@@ -101,10 +103,13 @@ if ( key=='n' || key=='N' ) { //Nightmode, basic control is Boolean
   }
   //Brightness: ARROWS activate brightnessControl, never off
   //NOTE: Nightmode does turn off
-  if ( [Special Key Bind] ) { //Brightness keybind
+  if ( key==CODED && keyCode==UP || keyCode==DOWN ); { //Brightness keybind
     brightnessControl = true;
+    if ( key==CODED && keyCode==UP ) brightnessNumber++;
+    if ( key==CODED && keyCode==DOWN ) brightnessNumber--;
     //CONTINUE HERE with brightness toggles
-  }
+   }
+   println(brightnessNumber);
     //
   } //End keyPressed
 //
