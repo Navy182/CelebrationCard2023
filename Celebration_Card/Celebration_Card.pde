@@ -6,6 +6,7 @@ float xTitle, yTitle, widthTitle, heightTitle;
 float xFooter, yFooter, widthFooter, heightFooter;
 PFont titleFont, footerFont;
 float xRectBackground, yRectBackground, widthRectBackground, heightRectBackground;
+float xRect2, yRect2, widthRect2, heightRect2;
 float xRectQuit, yRectQuit, widthRectQuit, heightRectQuit;
 int sizeFont, size;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
@@ -25,19 +26,20 @@ void setup() {
   //println("Display Width: "+displayWidth, "\tDisplay Width: "+displayHeight);
   //Character Escapes, tab, new
   //
-  fullScreen();
+  //fullScreen();
+  size (1000, 800);
   appWidth = width;
   appHeight = height;
   //
   //Population
-  //xRectQuit = appWidth*0;
-  //yRectQuit = appHeight*0;
-  //widthRectQuit = appWidth-1;
- // heightRectQuit = appHeight-1;
-  //xRectQuit = appWidth*1/4;
-  //yRectQuit = appHeight*1/4;
-  //widthRectQuit = appWidth*1/2;
-  //heightRectQuit = appHeight*1/2;
+  xRectQuit = appWidth*0;
+  yRectQuit = appHeight*0;
+  widthRectQuit = appWidth-1;
+  heightRectQuit = appHeight-1;
+  xRectQuit = appWidth*1/8;
+  yRectQuit = appHeight*1/8;
+  widthRectQuit = appWidth*1/10;
+  heightRectQuit = appHeight*1/10;
   backgroundImageX = appWidth*0;
   backgroundImageY = appHeight*0;
   backgroundImageWidth = appWidth*0;
@@ -90,10 +92,10 @@ void keyPressed() {
 //
 void mousePressed () {
   //When mouse is pressed
-  //println("mouse X: ", mouseX, "Mouse Y: ", mouseY);
+  println("mouse X: ", mouseX, "Mouse Y: ", mouseY);
   //
-  //xRect2, yRect2, widthRect2, heightRect2
-  //if (mouseX>xRectQuit && mouseX<xRectQuit+widthRectQuit && mouseY>yRectQuit && mouseY<yRectQuit+heightRectQuit) exit();
+  rect( xRect2, yRect2, widthRect2, heightRect2 );
+  if (mouseX>xRectQuit && mouseX<xRectQuit+widthRectQuit && mouseY>yRectQuit && mouseY<yRectQuit+heightRectQuit) exit();
   //
 } // End MousePressed
  
