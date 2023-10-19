@@ -1,10 +1,11 @@
 //Gobal Variables
 int appWidth, appHeight;
-String title="wwwwwww";
-color teal=#9AEAD7, resetDefaultInk=#FFFFFF;
+String title="Happy Birthday";
+color teal=#9AEAD7, blue=#0A1376, resetDefaultInk=#FFFFFF;
 float xTitle, yTitle, widthTitle, heightTitle;
 float xFooter, yFooter, widthFooter, heightFooter;
 PFont titleFont, footerFont;
+float xRect1, yRect1, widthRect1, heightRect1;
 float xRectBackground, yRectBackground, widthRectBackground, heightRectBackground;
 float xRect2, yRect2, widthRect2, heightRect2;
 float xRectQuit, yRectQuit, widthRectQuit, heightRectQuit;
@@ -21,7 +22,7 @@ PImage picBackground, flowerPortrait;
 //
 void setup() {
   //Print & Println
-  //println("wwwwwww");
+  //println("Happy Birthday");
   //println("Width:"+width, "\t", "Height:"+height);
   //println("Display Width: "+displayWidth, "\tDisplay Width: "+displayHeight);
   //Character Escapes, tab, new
@@ -40,22 +41,28 @@ void setup() {
   yRectQuit = appHeight*1/8;
   widthRectQuit = appWidth*1/10;
   heightRectQuit = appHeight*1/10;
+  xRect1 = appWidth*1/2 ;
+  yRect1 = appHeight*1/2;
+  widthRect1 = appWidth*1/4 ;
+  heightRect1 = appHeight*1/4 ;
   backgroundImageX = appWidth*0;
   backgroundImageY = appHeight*0;
-  backgroundImageWidth = appWidth*0;
-  backgroundImageHeight = appHeight*0;
+  backgroundImageWidth = appWidth;
+  backgroundImageHeight = appHeight;
   String up = "..";
   String open = "/";
   String imagesPath = up + open;
-  String PortraitImage = "../Images/Portrait/";
-  String flowerImage = "download.jpg";
-  picBackground = loadImage( imagesPath + PortraitImage + flowerImage );
+  String LandscapesImage = "Images/Landscapes/";
+  String flowerImage = "91240AAC-E013-DB4B-5B2B8C97B5A17616.jpg";
+  picBackground = loadImage( imagesPath + LandscapesImage + flowerImage );
+  //println(picBackground); //to see if processing is seeing the image
   //
   //DIVS
+  rect( xRect1, yRect1, widthRect1, heightRect1 );
   rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight);
   rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
   rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
-  rect(xTitle, yTitle, widthTitle, heightTitle); //'wwwwwww'
+  rect(xTitle, yTitle, widthTitle, heightTitle);
   rect(xFooter, yFooter, widthFooter, heightFooter);
   //rect(); //Image, foreground, near the top
   //rect(); //Copy & Paste this for all rect()s
@@ -64,7 +71,7 @@ void setup() {
   // Text Setup
   // Fonts from OS (Operating System)
   String[] fontList = PFont.list(); //Lists all fonts available on OS
-  //printArray(fontList);
+  printArray(fontList);
   titleFont = createFont("Verdana Bold", 45); 
   // Tools / Create Font / Find Font / Do not press "OK", Known bug
   //
@@ -73,13 +80,13 @@ void setup() {
 void draw() {
  //Drawing Text, copied for each line of text
  //
- //fill(teal); //ink
+ fill(teal); //ink
  textAlign( CENTER, CENTER ); //Align X&Y, see Processing.org / Reference
   //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
-  size = 10; //integer number
+  size = 45; //integer number
   textFont( titleFont , size ); //states which font to use
   text( title, xTitle, yTitle, widthTitle, heightTitle );
-  //background(184); //built in BUG, 1 pixel
+  background(184); //built in BUG, 1 pixel
  
   
   image( picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
