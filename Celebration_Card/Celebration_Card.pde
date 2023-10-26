@@ -37,10 +37,11 @@ void setup() {
   yRectQuit = appHeight*0;
   widthRectQuit = appWidth-1;
   heightRectQuit = appHeight-1;
-  xRectQuit = appWidth*1/8;
-  yRectQuit = appHeight*1/8;
+  xRectQuit = appWidth*1;
+  yRectQuit = appHeight*1;
   widthRectQuit = appWidth*1/10;
   heightRectQuit = appHeight*1/10;
+  
   xRect1 = appWidth*1/2 ;
   yRect1 = appHeight*1/2;
   widthRect1 = appWidth*1/4 ;
@@ -58,12 +59,6 @@ void setup() {
   //println(picBackground); //to see if processing is seeing the image
   //
   //DIVS
-  rect( xRect1, yRect1, widthRect1, heightRect1 );
-  rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight);
-  rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
-  rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
-  rect(xTitle, yTitle, widthTitle, heightTitle);
-  rect(xFooter, yFooter, widthFooter, heightFooter);
   //rect(); //Image, foreground, near the top
   //rect(); //Copy & Paste this for all rect()s
   //rect(); //
@@ -80,7 +75,7 @@ void setup() {
 void draw() {
  //Drawing Text, copied for each line of text
  //
- fill(teal); //ink
+ //fill(teal); //ink
  textAlign( CENTER, CENTER ); //Align X&Y, see Processing.org / Reference
   //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
   size = 45; //integer number
@@ -88,8 +83,14 @@ void draw() {
   text( title, xTitle, yTitle, widthTitle, heightTitle );
   background(184); //built in BUG, 1 pixel
  
-  
   image( picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
+  
+  rect( xRect1, yRect1, widthRect1, heightRect1 );
+  //rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight);
+  rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
+  rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
+  rect(xTitle, yTitle, widthTitle, heightTitle);
+  rect(xFooter, yFooter, widthFooter, heightFooter);
   //
 } //End draw
 //
