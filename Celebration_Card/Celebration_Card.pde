@@ -1,10 +1,10 @@
 //Gobal Variables
 int appWidth, appHeight;
-String title="Happy Birthday";
-color teal=#9AEAD7, blue=#0A1376, resetDefaultInk=#FFFFFF;
+String title="wwww";
+color blue=#0A1376, resetDefaultInk=#FFFFFF;
 float xTitle, yTitle, widthTitle, heightTitle;
 float xFooter, yFooter, widthFooter, heightFooter;
-PFont titleFont, footerFont;
+PFont titleFont;
 float xRect1, yRect1, widthRect1, heightRect1;
 float xRectBackground, yRectBackground, widthRectBackground, heightRectBackground;
 float xRect2, yRect2, widthRect2, heightRect2;
@@ -15,6 +15,7 @@ PImage picBackground, flowerPortrait;
 //Boolean nightmode=false; //Note: clock and turn on automatically
 //Boolean brightnessControl=false; //Note: ARROWS
 //int brightnessNumber=184; //Range:1-255
+
 //Text Variables
 //String ; //ALL text variables as name=value pairs
 //PFont ; //ALL fonts used
@@ -22,9 +23,9 @@ PImage picBackground, flowerPortrait;
 //
 void setup() {
   //Print & Println
-  //println("Happy Birthday");
-  //println("Width:"+width, "\t", "Height:"+height);
-  //println("Display Width: "+displayWidth, "\tDisplay Width: "+displayHeight);
+  println("Happy Birthday");
+  println("Width:"+width, "\t", "Height:"+height);
+  println("Display Width: "+displayWidth, "\tDisplay Width: "+displayHeight);
   //Character Escapes, tab, new
   //
   //fullScreen();
@@ -37,8 +38,8 @@ void setup() {
   yRectQuit = appHeight*0;
   widthRectQuit = appWidth-1;
   heightRectQuit = appHeight-1;
-  xRectQuit = appWidth*1;
-  yRectQuit = appHeight*1;
+  xRectQuit = appWidth*1/16;
+  yRectQuit = appHeight*1/16;
   widthRectQuit = appWidth*1/10;
   heightRectQuit = appHeight*1/10;
   
@@ -63,19 +64,19 @@ void setup() {
   //rect(); //Copy & Paste this for all rect()s
   //rect(); //
   //
-  // Text Setup
+  /* Text Setup
   // Fonts from OS (Operating System)
   String[] fontList = PFont.list(); //Lists all fonts available on OS
   printArray(fontList);
   titleFont = createFont("Verdana Bold", 45); 
   // Tools / Create Font / Find Font / Do not press "OK", Known bug
-  //
+ */
 } //End setup
 //
 void draw() {
  //Drawing Text, copied for each line of text
  //
- //fill(teal); //ink
+ fill(blue); //ink
  textAlign( CENTER, CENTER ); //Align X&Y, see Processing.org / Reference
   //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
   size = 45; //integer number
@@ -90,7 +91,6 @@ void draw() {
   rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
   rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
   rect(xTitle, yTitle, widthTitle, heightTitle);
-  rect(xFooter, yFooter, widthFooter, heightFooter);
   //
 } //End draw
 //
